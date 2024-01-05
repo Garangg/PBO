@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/CODE/NetBeans/Perpustakaan/src/DataBuku.java</file>
+            <file>file:/C:/CODE/NetBeans/Perpustakaan/src/perpustakaan/FormEdit.java</file>
+            <file>file:/C:/CODE/NetBeans/Perpustakaan/src/perpustakaan/MainApp.java</file>
             <file>file:/C:/CODE/NetBeans/Perpustakaan/src/koneksi/KoneksiDataBase.java</file>
+            <file>file:/C:/CODE/NetBeans/Perpustakaan/src/perpustakaan/DataBuku.java</file>
+            <file>file:/C:/CODE/NetBeans/Perpustakaan/src/perpustakaan/FormTambah.java</file>
         </group>
     </open-files>
 </project-private>
