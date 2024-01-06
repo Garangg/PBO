@@ -7,6 +7,8 @@ package perpustakaan;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -72,6 +74,11 @@ public class DataBuku extends javax.swing.JFrame {
                 "Kode Buku", "Judul", "Penerbit", "Penulis", "Tahun Terbit", "Rak", "Action"
             }
         ));
+        tblbuku.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tblbukuKeyPressed(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblbuku);
 
         btnTambah.setBackground(new java.awt.Color(102, 255, 102));
@@ -134,7 +141,7 @@ public class DataBuku extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnKembali)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
@@ -153,6 +160,11 @@ public class DataBuku extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tblbukuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblbukuKeyPressed
+        // TODO add your handling code here:
+        tblbuku.setEnabled(true);
+    }//GEN-LAST:event_tblbukuKeyPressed
+
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnTambahActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_btnTambahActionPerformed
@@ -163,6 +175,16 @@ public class DataBuku extends javax.swing.JFrame {
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHapusActionPerformed
         // TODO add your handling code here:
+        if(tblbuku.getSelectedRow() != -1){
+            try {
+                st = cn.createStatement();
+                st.executeUpdate("DELETE FROM buku WHERE kode = '" + tblbuku.getValueAt(tblbuku.getSelectedRow(), 0) + "'");
+                JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus");
+                Tampildata();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }// GEN-LAST:event_btnHapusActionPerformed
 
     private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnKembaliActionPerformed
