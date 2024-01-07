@@ -8,7 +8,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-import javafx.scene.chart.XYChart.Data;
 
 /**
  *
@@ -17,10 +16,8 @@ import javafx.scene.chart.XYChart.Data;
 public class FormEdit extends javax.swing.JFrame {
     public Statement st;
     public ResultSet rs;
-    Connection cn = koneksi.KoneksiDataBase.BukaKoneksi();
-    
-
     private DataBuku dataBuku;
+    Connection cn = koneksi.KoneksiDataBase.BukaKoneksi();
 
     /**
      * Creates new form FormEdit

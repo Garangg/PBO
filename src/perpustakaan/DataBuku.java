@@ -37,7 +37,7 @@ public class DataBuku extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -54,28 +54,30 @@ public class DataBuku extends javax.swing.JFrame {
         jLabel1.setText("Daftar Buku");
 
         tblbuku.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null },
-                        { null, null, null, null, null, null }
-                },
-                new String[] {
-                        "Kode Buku", "Judul", "Penerbit", "Penulis", "Tahun Terbit", "Rak"
-                }));
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Kode Buku", "Judul", "Penerbit", "Penulis", "Tahun Terbit"
+            }
+        ));
         tblbuku.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
+                keyPressed(evt);
             }
         });
         jScrollPane1.setViewportView(tblbuku);
@@ -266,17 +268,20 @@ public class DataBuku extends javax.swing.JFrame {
     private void Tampildata() {
         // Get the table model
         DefaultTableModel model = (DefaultTableModel) tblbuku.getModel();
-
+    
         // Clear the existing data in the table
         model.setRowCount(0);
-
+    
         // Fetch the updated data from the database and add it to the table model
         try {
             st = cn.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM buku");
             while (rs.next()) {
+                java.sql.Date tanggalTerbit = rs.getDate("tahun_terbit");
+                int tahunTerbit = tanggalTerbit.toLocalDate().getYear();
+    
                 model.addRow(new Object[] { rs.getString("kode"), rs.getString("judul"), rs.getString("penulis"),
-                        rs.getString("penerbit"), rs.getString("tahun_terbit"), rs.getString("lokasi_rak") });
+                        rs.getString("penerbit"), tahunTerbit, rs.getString("lokasi_rak") });
             }
         } catch (Exception e) {
             e.printStackTrace();
