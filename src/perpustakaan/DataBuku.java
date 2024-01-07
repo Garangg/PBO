@@ -115,73 +115,85 @@ public class DataBuku extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnKembali)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(24, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btnKembali)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout
-                                                        .createSequentialGroup()
-                                                        .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(69, 69, 69)
-                                                        .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(72, 72, 72)
-                                                        .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(326, 326, 326))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                        layout.createSequentialGroup()
-                                                                .addComponent(jScrollPane1,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 1154,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(24, 24, 24))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                        layout.createSequentialGroup()
-                                                                .addComponent(jLabel1)
-                                                                .addGap(528, 528, 528))))));
+                            .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(69, 69, 69)
+                            .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(72, 72, 72)
+                            .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(326, 326, 326))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(24, 24, 24))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addGap(528, 528, 528)))))
+        );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL,
-                new java.awt.Component[] { btnEdit, btnHapus, btnKembali, btnTambah });
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnEdit, btnHapus, btnKembali, btnTambah});
 
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnKembali)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                        .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(53, 53, 53)));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addComponent(btnKembali)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53))
+        );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] { btnKembali, btnTambah });
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnKembali, btnTambah});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tblbukuKeyPressed(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_tblbukuKeyPressed
-        // TODO add your handling code here:
-        tblbuku.setEnabled(true);
-    }// GEN-LAST:event_tblbukuKeyPressed
+   
 
-    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnTambahActionPerformed
+    private void tblbukuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblbukuMouseClicked
         // TODO add your handling code here:
+    }//GEN-LAST:event_tblbukuMouseClicked
+
+    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {// 
+        FormTambah FormTambahInstance = new FormTambah();
+        FormTambahInstance.setVisible(true);
+        this.dispose();
     }// GEN-LAST:event_btnTambahActionPerformed
 
-    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnEditActionPerformed
-        // TODO add your handling code here:
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {
+        // get selected row index
+        int selectedRowIndex = tblbuku.getSelectedRow();
+
+        if(selectedRowIndex != -1){
+            String kodeBuku = tblbuku.getValueAt(selectedRowIndex, 0).toString();
+            String judulBuku = tblbuku.getValueAt(selectedRowIndex, 1).toString();
+            String penerbitBuku = tblbuku.getValueAt(selectedRowIndex, 2).toString();
+            String penulisBuku = tblbuku.getValueAt(selectedRowIndex, 3).toString();
+            String tahunTerbitBuku = tblbuku.getValueAt(selectedRowIndex, 4).toString();
+            String rakBuku = tblbuku.getValueAt(selectedRowIndex, 5).toString();
+
+            // Check the constructor of FormEdit class and make sure it accepts the correct parameters
+            FormEdit formEditInstance = new FormEdit(kodeBuku, judulBuku, penerbitBuku, penulisBuku, tahunTerbitBuku, rakBuku, this);
+            formEditInstance.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Pilih Data Terlebih Dahulu");
+        }
+        // FormEdit formEditInstance = new FormEdit();
+        // formEditInstance.setVisible(true);
+        // this.dispose();
     }// GEN-LAST:event_btnEditActionPerformed
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHapusActionPerformed
