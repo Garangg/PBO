@@ -18,6 +18,7 @@ public class FormEdit extends javax.swing.JFrame {
     public Statement st;
     public ResultSet rs;
     Connection cn = koneksi.KoneksiDataBase.BukaKoneksi();
+    
 
     private DataBuku dataBuku;
 
@@ -34,6 +35,7 @@ public class FormEdit extends javax.swing.JFrame {
         txtRak.setText(rak);
 
         this.dataBuku = dataBuku;
+        this.setLocationRelativeTo(null); // agar form ditengah layar
     }
 
     public void updateBook(String kodeBuku, String judul, String penerbit, String penulis, String tahunTerbit, String rak) {

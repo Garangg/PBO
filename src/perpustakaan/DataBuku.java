@@ -76,7 +76,6 @@ public class DataBuku extends javax.swing.JFrame {
                 }));
         tblbuku.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                tblbukuKeyPressed(evt);
             }
         });
         jScrollPane1.setViewportView(tblbuku);
@@ -161,11 +160,6 @@ public class DataBuku extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
    
-
-    private void tblbukuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblbukuMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tblbukuMouseClicked
-
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {// 
         FormTambah FormTambahInstance = new FormTambah();
         FormTambahInstance.setVisible(true);

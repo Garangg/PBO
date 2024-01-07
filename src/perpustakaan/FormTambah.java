@@ -23,6 +23,7 @@ public class FormTambah extends javax.swing.JFrame {
      */
     public FormTambah() {
         initComponents();
+        this.setLocationRelativeTo(null); // agar form ditengah layar
     }
 
     /**
