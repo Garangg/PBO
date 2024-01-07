@@ -7,6 +7,8 @@ package perpustakaan;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -72,6 +74,12 @@ public class DataBuku extends javax.swing.JFrame {
                 "Kode Buku", "Judul", "Penerbit", "Penulis", "Tahun Terbit", "Rak", "Action"
             }
         ));
+        tblbuku.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblbukuMouseClicked(evt);
+            }
+        });
+
         jScrollPane1.setViewportView(tblbuku);
 
         btnTambah.setBackground(new java.awt.Color(102, 255, 102));
@@ -153,8 +161,16 @@ public class DataBuku extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnTambahActionPerformed
+   
+
+    private void tblbukuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblbukuMouseClicked
         // TODO add your handling code here:
+    }//GEN-LAST:event_tblbukuMouseClicked
+
+    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {// 
+        FormTambah FormTambahInstance = new FormTambah();
+        FormTambahInstance.setVisible(true);
+        this.dispose();
     }// GEN-LAST:event_btnTambahActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnEditActionPerformed
@@ -163,7 +179,22 @@ public class DataBuku extends javax.swing.JFrame {
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHapusActionPerformed
         // TODO add your handling code here:
+        if (tblbuku.getSelectedRow() != -1) {
+            try {
+                st = cn.createStatement();
+                st.executeUpdate(
+                        "DELETE FROM buku WHERE kode = '" + tblbuku.getValueAt(tblbuku.getSelectedRow(), 0) + "'");
+                JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus");
+                Tampildata();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Pilih Data Terlebih Dahulu");
+        }
     }// GEN-LAST:event_btnHapusActionPerformed
+
+    
 
     private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnKembaliActionPerformed
         // TODO add your handling code here:
