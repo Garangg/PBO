@@ -169,28 +169,36 @@ public class DataBuku extends javax.swing.JFrame {
     }// GEN-LAST:event_btnTambahActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {
-        // get selected row index
         int selectedRowIndex = tblbuku.getSelectedRow();
-
-        if(selectedRowIndex != -1){
+    
+        if (selectedRowIndex != -1) {
             String kodeBuku = tblbuku.getValueAt(selectedRowIndex, 0).toString();
-            String judulBuku = tblbuku.getValueAt(selectedRowIndex, 1).toString();
-            String penerbitBuku = tblbuku.getValueAt(selectedRowIndex, 2).toString();
-            String penulisBuku = tblbuku.getValueAt(selectedRowIndex, 3).toString();
-            String tahunTerbitBuku = tblbuku.getValueAt(selectedRowIndex, 4).toString();
-            String rakBuku = tblbuku.getValueAt(selectedRowIndex, 5).toString();
-
-            // Check the constructor of FormEdit class and make sure it accepts the correct parameters
-            FormEdit formEditInstance = new FormEdit(kodeBuku, judulBuku, penerbitBuku, penulisBuku, tahunTerbitBuku, rakBuku, this);
-            formEditInstance.setVisible(true);
-            this.dispose();
+    
+            try {
+                st = cn.createStatement();
+                rs = st.executeQuery("SELECT * FROM buku WHERE kode = '" + kodeBuku + "'");
+    
+                if (rs.next()) {
+                    String judulBuku = rs.getString("judul");
+                    String penerbitBuku = rs.getString("penerbit");
+                    String penulisBuku = rs.getString("penulis");
+                    String tahunTerbitBuku = rs.getString("tahun_terbit");
+    
+                    // Pass the book details to the FormEdit constructor
+                    FormEdit formEditInstance = new FormEdit(kodeBuku, judulBuku, penerbitBuku, penulisBuku, tahunTerbitBuku, tahunTerbitBuku, this);
+                    formEditInstance.setVisible(true);
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Buku tidak ditemukan");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Pilih Data Terlebih Dahulu");
         }
-        // FormEdit formEditInstance = new FormEdit();
-        // formEditInstance.setVisible(true);
-        // this.dispose();
-    }// GEN-LAST:event_btnEditActionPerformed
+    }
+    
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHapusActionPerformed
         // TODO add your handling code here:
