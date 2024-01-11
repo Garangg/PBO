@@ -46,6 +46,8 @@ public class MainApp extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btnListBuku = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnListPenulis = new javax.swing.JButton();
+        btnListPenerbit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,6 +79,20 @@ public class MainApp extends javax.swing.JFrame {
 
         jLabel1.setText("Masukkan Kode Buku (Kode buku bisa dilihat di tabel buku) :");
 
+        btnListPenulis.setText("Tabel Penulis");
+        btnListPenulis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListPenulisActionPerformed(evt);
+            }
+        });
+
+        btnListPenerbit.setText("Tabel Penerbit");
+        btnListPenerbit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListPenerbitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -88,27 +104,50 @@ public class MainApp extends javax.swing.JFrame {
                     .addComponent(tfCari, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCari, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnListBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(btnListPenulis)
+                    .addComponent(btnListPenerbit))
                 .addGap(186, 186, 186))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnListBuku, btnListPenerbit, btnListPenulis});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(tfCari, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCari, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(btnListPenerbit)
+                .addGap(18, 18, 18)
+                .addComponent(btnListPenulis)
+                .addGap(18, 18, 18)
                 .addComponent(btnListBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
 
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnListBuku, btnListPenerbit, btnListPenulis});
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnListPenulisActionPerformed(java.awt.event.ActionEvent evt) {   
+        DataPenulis dataPenulisInstance = new DataPenulis();
+        dataPenulisInstance.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnListPenulisActionPerformed
+
+    private void btnListPenerbitActionPerformed(java.awt.event.ActionEvent evt) {
+        DataPenerbit dataPenerbitInstance = new DataPenerbit();
+        dataPenerbitInstance.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnListPenerbitActionPerformed
 
     private void tfCariActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_tfCariActionPerformed
         // TODO add your handling code here:
@@ -169,6 +208,8 @@ public class MainApp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCari;
     private javax.swing.JButton btnListBuku;
+    private javax.swing.JButton btnListPenerbit;
+    private javax.swing.JButton btnListPenulis;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField tfCari;

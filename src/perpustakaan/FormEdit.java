@@ -22,14 +22,14 @@ public class FormEdit extends javax.swing.JFrame {
     /**
      * Creates new form FormEdit
      */
-    public FormEdit(String kodeBuku, String judul, String penerbit, String penulis, String tahunTerbit, String rak, DataBuku dataBuku) {
+    public FormEdit(String kodeBuku, String judul, String penerbit, String penulis, String tahunTerbit, String LokasiRak, DataBuku dataBuku) {
         initComponents();
         txtKode.setText(kodeBuku);
         txtJudul.setText(judul);
         txtPenerbit.setText(penerbit);
         txtPenulis.setText(penulis);
         txtTahunTerbit.setText(tahunTerbit);
-        txtRak.setText(rak);
+        txtRak.setText(LokasiRak);
 
         this.dataBuku = dataBuku;
         this.setLocationRelativeTo(null); // agar form ditengah layar
@@ -212,7 +212,7 @@ public class FormEdit extends javax.swing.JFrame {
     private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {
         this.dispose();
         new DataBuku().setVisible(true);
-    }//GEN-LAST:event_btnKembaliActionPerformed
+    }                                          
 
     private void txtKodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKodeActionPerformed
         // TODO add your handling code here:

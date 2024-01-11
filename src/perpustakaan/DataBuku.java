@@ -55,31 +55,27 @@ public class DataBuku extends javax.swing.JFrame {
 
         tblbuku.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Kode Buku", "Judul", "Penerbit", "Penulis", "Tahun Terbit"
+                "Kode Buku", "Judul", "Penerbit", "Penulis", "Tahun Terbit", "Rak"
             }
         ));
-        tblbuku.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                keyPressed(evt);
-            }
-        });
+  
         jScrollPane1.setViewportView(tblbuku);
 
         btnTambah.setBackground(new java.awt.Color(102, 255, 102));
@@ -183,9 +179,10 @@ public class DataBuku extends javax.swing.JFrame {
                     String penerbitBuku = rs.getString("penerbit");
                     String penulisBuku = rs.getString("penulis");
                     String tahunTerbitBuku = rs.getString("tahun_terbit");
+                    String LokasiRak = rs.getString("lokasi_rak");
     
                     // Pass the book details to the FormEdit constructor
-                    FormEdit formEditInstance = new FormEdit(kodeBuku, judulBuku, penerbitBuku, penulisBuku, tahunTerbitBuku, tahunTerbitBuku, this);
+                    FormEdit formEditInstance = new FormEdit(kodeBuku, judulBuku, penerbitBuku, penulisBuku, tahunTerbitBuku, LokasiRak, this);
                     formEditInstance.setVisible(true);
                     this.dispose();
                 } else {
